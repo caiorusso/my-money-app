@@ -4,6 +4,7 @@ const errorHandler = require('../common/errorHandler')
 BillingCycle.methods(['get', 'post', 'put', 'delete'])
 BillingCycle.updateOptions({new: true, runValidators: true})
 
+//chamada do midleware de tratamento de erro
 BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
 BillingCycle.route('count', function(req, res, next){
